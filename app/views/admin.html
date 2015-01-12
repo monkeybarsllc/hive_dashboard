@@ -1,7 +1,7 @@
 
 <div id="admin-panel">
 	<div class="row" ng-repeat="moonshot in moonshots" ng-init="moonshot.update = false">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<p class="lead">
 				<a ng-click="moonshot.update = true" ng-hide="moonshot.update">
 					<i class="fa fa-edit"></i>
@@ -17,6 +17,9 @@
 							 ng-model="moonshot.title" 
 							 ng-change="moonshots.$save(moonshot)" />
 			</div>
+		</div>
+		<div class="col-md-2">
+			<input type="radio" ng-model="moonshot.checkpoint" value="0" ng-change="moonshots.$save(moonshot)"> 0
 		</div>
 		<div class="col-md-2">
 			<input type="radio" ng-model="moonshot.checkpoint" value="1" ng-change="moonshots.$save(moonshot)"> 1
