@@ -1,7 +1,7 @@
 
 <div id="admin-panel">
 	<div class="row" ng-repeat="moonshot in moonshots" ng-init="moonshot.update = false">
-		<div class="col-md-4">
+		<div class="col-md-1">
 			<p class="lead">
 				<a ng-click="moonshot.update = true" ng-hide="moonshot.update">
 					<i class="fa fa-edit"></i>
@@ -9,6 +9,17 @@
 				<a ng-click="moonshot.update = false" ng-show="moonshot.update">
 					<i class="fa fa-close"></i>
 				</a>
+				{{moonshot.id}} 
+			</p>
+			<div class="form-group" ng-show="moonshot.update">
+				<input type="text" 
+							 class="form-control" 
+							 ng-model="moonshot.id" 
+							 ng-change="moonshots.$save(moonshot)" />
+			</div>
+		</div>
+		<div class="col-md-3">
+			<p class="lead">
 				{{moonshot.title}} 
 			</p>
 			<div class="form-group" ng-show="moonshot.update">
@@ -18,17 +29,26 @@
 							 ng-change="moonshots.$save(moonshot)" />
 			</div>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-1">
 			<input type="radio" ng-model="moonshot.checkpoint" value="0" ng-change="moonshots.$save(moonshot)"> 0
 		</div>
-		<div class="col-md-2">
-			<input type="radio" ng-model="moonshot.checkpoint" value="1" ng-change="moonshots.$save(moonshot)"> 1
+		<div class="col-md-1">
+			<input type="radio" ng-model="moonshot.checkpoint" value="1" ng-change="moonshots.$save(moonshot)"> 1 - On
 		</div>
-		<div class="col-md-2">
-			<input type="radio" ng-model="moonshot.checkpoint" value="2" ng-change="moonshots.$save(moonshot)"> 2
+		<div class="col-md-1">
+			<input type="radio" ng-model="moonshot.checkpoint" value="2" ng-change="moonshots.$save(moonshot)"> 1 - Complete
 		</div>
-		<div class="col-md-2">
-			<input type="radio" ng-model="moonshot.checkpoint" value="3" ng-change="moonshots.$save(moonshot)"> 3
+		<div class="col-md-1">
+			<input type="radio" ng-model="moonshot.checkpoint" value="3" ng-change="moonshots.$save(moonshot)"> 2 - On
+		</div>
+		<div class="col-md-1">
+			<input type="radio" ng-model="moonshot.checkpoint" value="4" ng-change="moonshots.$save(moonshot)"> 2 - Complete
+		</div>
+		<div class="col-md-1">
+			<input type="radio" ng-model="moonshot.checkpoint" value="5" ng-change="moonshots.$save(moonshot)"> 3 - On
+		</div>
+		<div class="col-md-1">
+			<input type="radio" ng-model="moonshot.checkpoint" value="6" ng-change="moonshots.$save(moonshot)"> 3 - Completed
 		</div>
 	</div>
 </div>
